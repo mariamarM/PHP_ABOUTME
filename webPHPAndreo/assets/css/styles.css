@@ -1,0 +1,277 @@
+:root {
+  --LetraFuenteTitulo: 'Alan Sans', sans-serif;
+  --LetraColor: #ABABAB;
+}
+
+body {
+  background-color: #1F1F1F;
+  font-family: var(--LetraFuenteTitulo);
+  color: var(--LetraColor);
+  text-align: center;
+}
+
+.carousel {
+    perspective: 1200px;
+    width: 80vw;
+    height: 635px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -86px 50px
+}
+
+
+#frameCarrusel {
+  position: absolute;
+  border: 1px solid var(--LetraColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  user-select: none;
+  transform-style: preserve-3d;
+     
+}
+.frameCarrusel{
+ padding: 30px 122px;
+    border-radius: 20px;
+}
+.carruselPresentacion {
+  width: 19%;
+  
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  cursor: grab;
+  animation: spin 20s linear infinite;
+}
+
+.frameCarrusel:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+   box-shadow: 0 4px 20px rgba(190, 190, 190, 0.2);
+}
+
+.frameCarrusel:nth-child(1) {
+  transform: rotateY(0deg) translateZ(400px);
+  background-image: url('../img/blur_naranja.png');
+
+}
+
+.frameCarrusel:nth-child(2) {
+  transform: rotateY(60deg) translateZ(400px);
+    background-image: url('../img/blur_azul.png');
+}
+
+.frameCarrusel:nth-child(3) {
+  transform: rotateY(120deg) translateZ(400px);
+    background-image: url('../img/blurr_verde.png');
+
+}
+
+.frameCarrusel:nth-child(4) {
+  transform: rotateY(180deg) translateZ(400px);
+    background-image: url('../img/blur_rojo.png');
+
+}
+
+.frameCarrusel:nth-child(5) {
+  transform: rotateY(240deg) translateZ(400px);
+    background-image: url('../img/blur_amarillo.png');
+
+}
+
+.frameCarrusel:nth-child(6) {
+  transform: rotateY(300deg) translateZ(400px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -40%;
+  width: 40%;
+  height: 100%;
+  background: #222;
+  color: var(--LetraColor);
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  transition: right 0.5s ease;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.sidebar.open {
+  right: 0;
+  width: 30%;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar-content {
+  padding: 10px;
+}
+/*estilos de musica sidebar*/
+
+.articuloperfilMusica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+.contenedorMusica {
+    width: 80%;
+   
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.tituloMusica {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #868686ff;
+}
+.albumesFavoritos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    justify-content: center;
+}
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.07);
+    gap: 10px;
+     border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 7px 10px;
+    width:100%;
+}
+.album img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.imagenesPerfil{
+  position: relative;
+  bottom: -120px;
+  left: 70px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.articuloTravel{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+}
+.travelSlider{
+  width: 80%;
+  border: 1px solid var(--LetraColor);
+    background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+.fotosViaje{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+.sitiosVIAJE {
+  display: flex;               
+  gap: 1rem;                   
+  overflow-x: auto;            
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory; 
+}
+
+
+.sitiosVIAJE::-webkit-scrollbar {
+  height: 8px;
+}
+.sitiosVIAJE::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+
+.sitio-item {
+  flex: 0 0 auto;              
+  width: 220px;
+  text-align: center;
+  scroll-snap-align: start;     
+}
+
+.sitio-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sitio-item p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--LetraColor);
+}
+.restaurantes-lista {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.btn-restaurante {
+  align-items: center;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.07);
+    color: var(--LetraColor);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-restaurante:hover {
+    background-color: #686868;
+
+}
+
+#map {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
